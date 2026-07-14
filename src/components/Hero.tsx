@@ -72,10 +72,10 @@ export default function Hero() {
             className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 mb-12"
           >
             <Link
-              href="/contact"
+              href="/quote"
               className="btn-shimmer flex items-center justify-center bg-brand-gold text-brand-brown font-semibold text-lg px-8 py-4 rounded-full hover:bg-brand-orange hover:text-white transition-all transform hover:scale-105"
             >
-              Place an Order
+              Get a Quote
               <ArrowRight className="ml-2 w-5 h-5" />
             </Link>
             <Link

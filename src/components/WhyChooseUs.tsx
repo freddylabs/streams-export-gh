@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { ShieldCheck, PackageCheck, Truck } from "lucide-react";
-import Image from "next/link"; // We can use next/image later if actual images are provided, for now we can use icons and divs. Actually we should use next/image.
+// We can use next/image later if actual images are provided, for now we can use icons and divs. Actually we should use next/image.
 // Wait, the prompt said: each with image, icon, and label
 
 import NextImage from "next/image";

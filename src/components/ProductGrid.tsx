@@ -13,8 +13,8 @@ const products = [
     image: "https://images.unsplash.com/photo-1504670073073-6123e39e0754?q=80&w=600&auto=format&fit=crop",
   },
   {
-    name: "Dried Fish (Kokonte)",
-    description: "Sustainably sourced, sun-dried fish providing rich flavor and high nutritional value for rich cuisines.",
+    name: "Dried Fish (Smoked)",
+    description: "Sustainably sourced, sun-dried and smoked fish providing rich flavor and high nutritional value.",
     badge: "Sustainably Sourced",
     image: "https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?q=80&w=600&auto=format&fit=crop",
   },
@@ -37,11 +37,47 @@ const products = [
     image: "https://images.unsplash.com/photo-1528459801416-a9e53bbf4e17?q=80&w=600&auto=format&fit=crop",
   },
   {
-    name: "Cocoa Beans",
+    name: "Cocoa Beans & Powder",
     description: "Premium sun-dried cocoa beans, the foundation of the world's finest chocolate.",
     badge: "Premium Export",
     image: "https://images.unsplash.com/photo-1550547660-d9450f859349?q=80&w=600&auto=format&fit=crop",
   },
+  {
+    name: "Yams & Plantains",
+    description: "Fresh, high-quality agricultural produce carefully sourced and packed for international markets.",
+    badge: "Export Grade",
+    image: "https://images.unsplash.com/photo-1596647413665-27a3cce88006?q=80&w=600&auto=format&fit=crop",
+  },
+  {
+    name: "Palm Oil (Zomi)",
+    description: "Rich, unrefined red palm oil essential for authentic West African cooking.",
+    badge: "100% Pure",
+    image: "https://images.unsplash.com/photo-1518562923427-19e694fbd8e9?q=80&w=600&auto=format&fit=crop",
+  },
+  {
+    name: "Cashew Nuts (Raw/Roasted)",
+    description: "Premium grade cashew nuts sourced directly from local farmers. Perfect for snacking and culinary use.",
+    badge: "Top Export",
+    image: "https://images.unsplash.com/photo-1599818815147-32ebfec87e4f?q=80&w=600&auto=format&fit=crop",
+  },
+  {
+    name: "Dried Mangoes & Pineapples",
+    description: "Naturally sweet, sun-dried tropical fruits with no added sugar or preservatives.",
+    badge: "100% Natural",
+    image: "https://images.unsplash.com/photo-1628557044797-f21a177c37ec?q=80&w=600&auto=format&fit=crop",
+  },
+  {
+    name: "Prekese (Aidan Fruit)",
+    description: "Traditional aromatic spice and medicinal plant known for its rich flavor and health benefits.",
+    badge: "Authentic Spice",
+    image: "https://images.unsplash.com/photo-1596647413665-27a3cce88006?q=80&w=600&auto=format&fit=crop",
+  },
+  {
+    name: "Bolga Baskets",
+    description: "Hand-woven elephant grass baskets from Bolgatanga, showcasing exquisite craftsmanship.",
+    badge: "Handcrafted",
+    image: "https://images.unsplash.com/photo-1610408542918-028f0de20b8e?q=80&w=600&auto=format&fit=crop",
+  }
 ];
 
 export default function ProductGrid() {
@@ -118,7 +154,7 @@ export default function ProductGrid() {
                 </p>
                 <div className="mt-6 pt-6 border-t border-brand-brown/10">
                   <Link 
-                    href="/contact"
+                    href="/quote"
                     className="inline-flex items-center text-sm font-semibold text-brand-brown hover:text-brand-orange transition-colors"
                   >
                     Request a Quote <ArrowRight className="ml-2 w-4 h-4" />

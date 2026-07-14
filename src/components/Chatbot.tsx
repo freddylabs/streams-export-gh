@@ -1,7 +1,8 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
-import { MessageSquare, X, Send, Bot, User } from "lucide-react";
+import { useRouter } from "next/navigation";
+import { MessageSquare, X, Send, Bot } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 type Message = {
@@ -22,6 +23,7 @@ export default function Chatbot() {
   const [input, setInput] = useState("");
   const [isTyping, setIsTyping] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
+  const router = useRouter();
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -50,11 +52,13 @@ export default function Chatbot() {
       
       const lowerInput = userMessage.text.toLowerCase();
       if (lowerInput.includes("product") || lowerInput.includes("catalog")) {
-        aiResponseText = "We export a variety of premium Ghanaian goods including Premium Gari, Shea Butter, Black Soap, Kente Textiles, Cocoa Beans, and Dried Fish. Are you interested in a specific product?";
+        aiResponseText = "Taking you to our products page! We export a variety of premium Ghanaian goods including Premium Gari, Shea Butter, Black Soap, Kente Textiles, Cocoa Beans, and Dried Fish.";
+        router.push("/products");
       } else if (lowerInput.includes("shipping") || lowerInput.includes("delivery")) {
         aiResponseText = "We handle end-to-end logistics and guarantee safe, timely delivery worldwide. Shipping timelines depend on your location and order volume.";
-      } else if (lowerInput.includes("price") || lowerInput.includes("cost") || lowerInput.includes("quote")) {
-        aiResponseText = "Our pricing is highly competitive and depends on the order volume. Please visit our Contact page or email us with your requirements for a detailed quote.";
+      } else if (lowerInput.includes("price") || lowerInput.includes("cost") || lowerInput.includes("quote") || lowerInput.includes("order")) {
+        aiResponseText = "Let me take you to our Quote Calculator where you can get an instant estimate and place an order!";
+        router.push("/quote");
       } else if (lowerInput.includes("gari")) {
         aiResponseText = "Our Premium Gari is 100% natural, crisp, and finely roasted. We can supply in bulk quantities for retail or wholesale.";
       } else if (lowerInput.includes("shea butter")) {
