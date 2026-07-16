@@ -68,7 +68,9 @@ export default function Navbar() {
           <div className="flex justify-end">
             <Link
               href="/quote"
-              className="btn-shimmer bg-brand-gold text-white font-semibold px-5 py-2 md:px-6 md:py-2.5 rounded-full hover:bg-brand-orange transition-colors text-sm md:text-base shadow-sm"
+              className={`btn-shimmer bg-brand-gold text-white font-semibold px-5 py-2 md:px-6 md:py-2.5 rounded-full hover:bg-brand-orange transition-all duration-300 text-sm md:text-base shadow-sm ${
+                isHomePage && !isScrolled ? 'opacity-0 pointer-events-none' : 'opacity-100'
+              }`}
             >
               Get a Quote
             </Link>
