@@ -77,7 +77,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.6 }}
-            className="flex flex-row space-x-2 sm:space-x-4 mb-6 md:mb-16 w-full justify-center px-2"
+            className="flex flex-row space-x-2 sm:space-x-4 mb-6 md:mb-8 w-full justify-center px-2"
           >
             <Link
               href="/quote"
