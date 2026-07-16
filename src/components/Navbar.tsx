@@ -42,10 +42,17 @@ export default function Navbar() {
     >
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between relative">
-          {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
-          <div className="flex-1 md:flex-none flex items-center">
+          
+          <div className="flex flex-1 items-center">
+            <button
+              className={`mr-4 md:mr-6 transition-colors ${isWhiteNavbar ? 'text-brand-brown hover:text-brand-gold' : 'text-white hover:text-brand-gold'}`}
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              aria-label="Toggle menu"
+            >
+              {isMobileMenuOpen ? <X className="w-8 h-8" /> : <Menu className="w-8 h-8" />}
+            </button>
             {(!isHomePage || isScrolled) && (
-              <a href="/" className="flex items-center mr-8 transition-opacity duration-300">
+              <a href="/" className="flex items-center transition-opacity duration-300">
                 <Image 
                   src="/logo_transparent.png" 
                   alt="Streams Export GH Logo" 
@@ -58,63 +65,27 @@ export default function Navbar() {
             )}
           </div>
 
-          <nav className="hidden md:flex items-center space-x-8 absolute left-1/2 transform -translate-x-1/2">
-            {navLinks.map((link) => {
-              const isHomeLink = link.href === "/";
-              const textColor = isWhiteNavbar ? 'text-brand-brown' : 'text-white';
-              
-              if (isHomeLink) {
-                return (
-                  // eslint-disable-next-line @next/next/no-html-link-for-pages
-                  <a
-                    key={link.name}
-                    href={link.href}
-                    className={`${textColor} hover:text-brand-gold font-inter font-medium transition-colors`}
-                  >
-                    {link.name}
-                  </a>
-                );
-              }
-              return (
-                <Link
-                  key={link.name}
-                  href={link.href}
-                  className={`${textColor} hover:text-brand-gold font-inter font-medium transition-colors`}
-                >
-                  {link.name}
-                </Link>
-              );
-            })}
-          </nav>
-
-          <div className="hidden md:flex flex-1 justify-end">
+          <div className="flex justify-end">
             <Link
               href="/quote"
-              className="btn-shimmer bg-brand-gold text-white font-semibold px-6 py-2 rounded-full hover:bg-brand-orange transition-colors"
+              className="btn-shimmer bg-brand-gold text-white font-semibold px-5 py-2 md:px-6 md:py-2.5 rounded-full hover:bg-brand-orange transition-colors text-sm md:text-base shadow-sm"
             >
               Get a Quote
             </Link>
           </div>
-
-          <button
-            className={`md:hidden ${isWhiteNavbar ? 'text-brand-brown' : 'text-white'}`}
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            aria-label="Toggle menu"
-          >
-            {isMobileMenuOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
-          </button>
         </div>
       </div>
 
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-white border-t border-gray-100"
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.2 }}
+            className="absolute top-full left-0 right-0 bg-white shadow-xl border-t border-gray-100"
           >
-            <div className="flex flex-col px-6 py-4 space-y-4 shadow-lg">
+            <div className="container mx-auto px-6 py-6 flex flex-col space-y-4">
               {navLinks.map((link) => {
                 const isHomeLink = link.href === "/";
                 
@@ -125,7 +96,7 @@ export default function Navbar() {
                       key={link.name}
                       href={link.href}
                       onClick={() => setIsMobileMenuOpen(false)}
-                      className="text-brand-brown hover:text-brand-gold font-inter text-lg font-medium"
+                      className="text-brand-brown hover:text-brand-gold font-poppins text-xl font-medium transition-colors"
                     >
                       {link.name}
                     </a>
@@ -136,19 +107,12 @@ export default function Navbar() {
                     key={link.name}
                     href={link.href}
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="text-brand-brown hover:text-brand-gold font-inter text-lg font-medium"
+                    className="text-brand-brown hover:text-brand-gold font-poppins text-xl font-medium transition-colors"
                   >
                     {link.name}
                   </Link>
                 );
               })}
-              <Link
-                href="/quote"
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="btn-shimmer bg-brand-gold text-white text-center font-semibold px-6 py-3 rounded-full hover:bg-brand-orange transition-colors"
-              >
-                Get a Quote
-              </Link>
             </div>
           </motion.div>
         )}
