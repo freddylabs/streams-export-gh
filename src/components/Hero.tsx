@@ -33,6 +33,7 @@ export default function Hero() {
             className="flex flex-col items-center justify-center space-y-1.5 md:space-y-2 mb-2 md:mb-3 mt-auto"
           >
             {/* Added Logo specifically requested by user */}
+            {/* eslint-disable-next-line @next/next/no-img-element */}
             <img 
               src="/logo_transparent.png" 
               alt="Streams Export GH Logo" 

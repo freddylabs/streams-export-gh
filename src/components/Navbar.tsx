@@ -14,7 +14,6 @@ export default function Navbar() {
   
   const isHomePage = pathname === "/";
   const isWhiteNavbar = isScrolled || !isHomePage || isMobileMenuOpen;
-  const shouldShimmer = isHomePage && !isScrolled;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -52,7 +51,7 @@ export default function Navbar() {
               {isMobileMenuOpen ? <X className="w-8 h-8" /> : <Menu className="w-8 h-8" />}
             </button>
             {(!isHomePage || isScrolled) && (
-              <a href="/" className="flex items-center transition-opacity duration-300">
+              <Link href="/" className="flex items-center transition-opacity duration-300">
                 <Image 
                   src="/logo_transparent.png" 
                   alt="Streams Export GH Logo" 
@@ -61,7 +60,7 @@ export default function Navbar() {
                   className="object-contain h-12 w-auto md:h-16"
                   priority
                 />
-              </a>
+              </Link>
             )}
           </div>
 
