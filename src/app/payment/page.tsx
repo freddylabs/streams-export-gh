@@ -1,13 +1,13 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { CreditCard, Lock, CheckCircle2, Loader2, ArrowLeft } from "lucide-react";
 import { useAuth } from "@/context/AuthContext";
 import Link from "next/link";
 
-export default function PaymentPage() {
+function PaymentContent() {
   const { user, updateOrderPayment } = useAuth();
   const router = useRouter();
   const searchParams = useSearchParams();
@@ -151,5 +151,13 @@ export default function PaymentPage() {
         )}
       </AnimatePresence>
     </div>
+  );
+}
+
+export default function PaymentPage() {
+  return (
+    <Suspense fallback={<div className="min-h-screen bg-brand-bg flex items-center justify-center"><Loader2 className="w-8 h-8 text-brand-gold animate-spin" /></div>}>
+      <PaymentContent />
+    </Suspense>
   );
 }
