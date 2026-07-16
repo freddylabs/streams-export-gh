@@ -43,17 +43,19 @@ export default function Navbar() {
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between relative">
           {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
-          <div className="flex items-center">
-            <a href="/" className="flex items-center mr-8">
-              <Image 
-              src="/logo_transparent.png" 
-              alt="Streams Export GH Logo" 
-              width={160} 
-              height={160} 
-              className={`object-contain h-16 w-auto md:h-20 ${shouldShimmer ? 'animate-glisten' : ''}`}
-              priority
-            />
-            </a>
+          <div className="flex-1 md:flex-none flex items-center">
+            {(!isHomePage || isScrolled) && (
+              <a href="/" className="flex items-center mr-8 transition-opacity duration-300">
+                <Image 
+                  src="/logo_transparent.png" 
+                  alt="Streams Export GH Logo" 
+                  width={160} 
+                  height={160} 
+                  className="object-contain h-12 w-auto md:h-16"
+                  priority
+                />
+              </a>
+            )}
           </div>
 
           <nav className="hidden md:flex items-center space-x-8 absolute left-1/2 transform -translate-x-1/2">
