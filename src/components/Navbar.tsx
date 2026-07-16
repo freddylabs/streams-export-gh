@@ -69,7 +69,7 @@ export default function Navbar() {
             <Link
               href="/quote"
               className={`btn-shimmer bg-brand-gold text-white font-semibold px-5 py-2 md:px-6 md:py-2.5 rounded-full hover:bg-brand-orange transition-all duration-300 text-sm md:text-base shadow-sm ${
-                isHomePage && !isScrolled ? 'opacity-0 pointer-events-none' : 'opacity-100'
+                isHomePage && !isScrolled ? 'opacity-0 md:opacity-100 pointer-events-none md:pointer-events-auto' : 'opacity-100'
               }`}
             >
               Get a Quote
@@ -81,13 +81,31 @@ export default function Navbar() {
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            transition={{ duration: 0.2 }}
-            className="absolute top-full left-0 right-0 bg-white shadow-xl border-t border-gray-100"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 bg-black/50 z-40"
+            onClick={() => setIsMobileMenuOpen(false)}
+          />
+        )}
+      </AnimatePresence>
+
+      <AnimatePresence>
+        {isMobileMenuOpen && (
+          <motion.div
+            initial={{ x: "-100%" }}
+            animate={{ x: 0 }}
+            exit={{ x: "-100%" }}
+            transition={{ duration: 0.3, type: "spring", bounce: 0 }}
+            className="fixed top-0 left-0 bottom-0 w-64 bg-white shadow-2xl z-50 flex flex-col"
           >
-            <div className="container mx-auto px-6 py-6 flex flex-col space-y-4">
+            <div className="p-6 border-b border-gray-100 flex justify-between items-center">
+              <span className="font-poppins font-bold text-brand-brown text-lg">Menu</span>
+              <button onClick={() => setIsMobileMenuOpen(false)} className="text-brand-brown hover:text-brand-gold transition-colors">
+                <X className="w-6 h-6" />
+              </button>
+            </div>
+            <div className="flex flex-col p-6 space-y-6 flex-1 overflow-y-auto">
               {navLinks.map((link) => {
                 const isHomeLink = link.href === "/";
                 
@@ -98,7 +116,7 @@ export default function Navbar() {
                       key={link.name}
                       href={link.href}
                       onClick={() => setIsMobileMenuOpen(false)}
-                      className="text-brand-brown hover:text-brand-gold font-poppins text-xl font-medium transition-colors"
+                      className="text-brand-brown hover:text-brand-gold font-poppins text-lg font-medium transition-colors"
                     >
                       {link.name}
                     </a>
@@ -109,7 +127,7 @@ export default function Navbar() {
                     key={link.name}
                     href={link.href}
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="text-brand-brown hover:text-brand-gold font-poppins text-xl font-medium transition-colors"
+                    className="text-brand-brown hover:text-brand-gold font-poppins text-lg font-medium transition-colors"
                   >
                     {link.name}
                   </Link>

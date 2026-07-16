@@ -12,7 +12,7 @@ export default function Hero() {
   ];
 
   return (
-    <section className="relative h-[100svh] min-h-[600px] flex items-center justify-center overflow-hidden pt-28 pb-8">
+    <section className="relative h-[100svh] min-h-[600px] flex items-center justify-center overflow-hidden pt-16 md:pt-20 pb-4">
       {/* Background Image with Overlay */}
       <div 
         className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
@@ -23,20 +23,20 @@ export default function Hero() {
         <div className="absolute inset-0 bg-gradient-to-r from-brand-brown/95 via-brand-brown/80 to-brand-brown/50" />
       </div>
 
-      <div className="container relative z-10 mx-auto px-2 md:px-4">
-        <div className="max-w-5xl mx-auto flex flex-col items-center text-center">
+      <div className="container relative z-10 mx-auto px-2 md:px-4 flex flex-col justify-center h-full">
+        <div className="max-w-5xl mx-auto w-full flex flex-col items-center text-center">
           
           <motion.div
             initial={{ opacity: 0, scale: 0.8, filter: "blur(10px)" }}
             animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="flex flex-col items-center justify-center space-y-2 md:space-y-4 mb-3 md:mb-6"
+            className="flex flex-col items-center justify-center space-y-2 md:space-y-4 mb-3 md:mb-6 mt-auto"
           >
             {/* Added Logo specifically requested by user */}
             <img 
               src="/logo_transparent.png" 
               alt="Streams Export GH Logo" 
-              className="h-16 sm:h-24 md:h-36 lg:h-44 w-auto object-contain drop-shadow-xl animate-glisten"
+              className="h-20 sm:h-24 md:h-32 lg:h-36 w-auto object-contain drop-shadow-xl animate-glisten"
             />
 
             <div className="flex items-center bg-white/10 backdrop-blur-sm border border-brand-gold/30 rounded-full px-3 md:px-5 py-1 md:py-1.5 w-fit shadow-lg">
