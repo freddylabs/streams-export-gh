@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Poppins, Inter } from "next/font/google";
 import "./globals.css";
-import Chatbot from "@/components/Chatbot";
 import { Providers } from "@/components/Providers";
 
 const poppins = Poppins({
@@ -41,7 +40,6 @@ export default function RootLayout({
       >
         <Providers>
           {children}
-          <Chatbot />
         </Providers>
       </body>
     </html>

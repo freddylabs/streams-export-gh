@@ -20,25 +20,24 @@ export default function TrustedByBanner() {
           className="text-center max-w-4xl mx-auto"
         >
           <h3 className="text-2xl md:text-3xl font-poppins font-medium text-brand-brown mb-8 leading-relaxed">
-            Trusted by buyers across <span className="font-bold text-brand-gold">North America, Europe, Asia, and the Middle East</span>.
+            Trusted by buyers across <span className="font-bold text-brand-gold">the United States of America</span>.
           </h3>
           
           <div className="flex flex-wrap justify-center gap-6 md:gap-12 opacity-70">
-            {/* Using simple elegant text or SVG flags/icons to represent regions/countries */}
             <div className="flex items-center space-x-2 text-brand-brown font-inter font-semibold uppercase tracking-widest text-sm">
-              <span>USA</span>
+              <span>NEW YORK</span>
             </div>
             <div className="flex items-center space-x-2 text-brand-brown font-inter font-semibold uppercase tracking-widest text-sm">
-              <span>UK</span>
+              <span>CALIFORNIA</span>
             </div>
             <div className="flex items-center space-x-2 text-brand-brown font-inter font-semibold uppercase tracking-widest text-sm">
-              <span>CANADA</span>
+              <span>TEXAS</span>
             </div>
             <div className="flex items-center space-x-2 text-brand-brown font-inter font-semibold uppercase tracking-widest text-sm">
-              <span>GERMANY</span>
+              <span>FLORIDA</span>
             </div>
             <div className="flex items-center space-x-2 text-brand-brown font-inter font-semibold uppercase tracking-widest text-sm">
-              <span>UAE</span>
+              <span>ILLINOIS</span>
             </div>
           </div>
         </motion.div>

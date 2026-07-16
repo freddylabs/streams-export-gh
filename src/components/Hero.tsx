@@ -62,7 +62,7 @@ export default function Hero() {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="text-lg md:text-2xl text-gray-200 font-inter max-w-2xl mb-10 leading-relaxed"
           >
-            Authentic products. Reliable suppliers. Safe delivery. Partner with us to source premium Ghanaian goods for your international market.
+            Partner with us to source premium Ghanaian goods for your international market and everyday living.
           </motion.p>
 
           <motion.div

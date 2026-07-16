@@ -9,16 +9,16 @@ import NextImage from "next/image";
 
 const features = [
   {
-    title: "Reliable Suppliers",
+    title: "Reliable Supplies",
     description: "We work directly with trusted farmers and producers across Ghana to ensure consistent supply and fair trade practices.",
     icon: ShieldCheck,
-    image: "https://images.unsplash.com/photo-1596162954151-cdcb4c0f70a8?q=80&w=800&auto=format&fit=crop", // Farmer/Market
+    image: "/port_workers.png", // Port workers
   },
   {
     title: "Quality Products",
     description: "Every item undergoes rigorous quality checks to meet international export standards and preserve authenticity.",
     icon: PackageCheck,
-    image: "https://images.unsplash.com/photo-1611078716550-9c2f6e917d21?q=80&w=800&auto=format&fit=crop", // Products/Shea butter
+    image: "/ghanaian_food.png", // Ghanaian food items
   },
   {
     title: "Safe & Timely Delivery",

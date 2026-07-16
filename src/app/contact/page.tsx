@@ -38,24 +38,11 @@ export default function ContactPage() {
               className="space-y-6"
             >
               <div className="flex items-start space-x-4 bg-white p-6 rounded-2xl shadow-sm">
-                <MapPin className="w-8 h-8 text-brand-gold shrink-0 mt-1" />
-                <div>
-                  <h4 className="font-poppins font-semibold text-brand-brown text-xl mb-1">Our Office</h4>
-                  <p className="font-inter text-brand-brown/70">123 Export Avenue, <br />Accra, Ghana</p>
-                </div>
-              </div>
-
-              <div className="flex items-start space-x-4 bg-white p-6 rounded-2xl shadow-sm">
                 <Phone className="w-8 h-8 text-brand-gold shrink-0 mt-1" />
                 <div>
-                  <h4 className="font-poppins font-semibold text-brand-brown text-xl mb-1">Phone & AI Support</h4>
-                  <p className="font-inter text-brand-brown/70 mb-2">+233 (0) 00 000 0000</p>
-                  <button 
-                    onClick={() => document.querySelector<HTMLButtonElement>('.fixed.bottom-6.right-6')?.click()}
-                    className="inline-flex items-center justify-center bg-brand-brown text-white font-medium px-4 py-2 rounded-full hover:bg-brand-gold transition-colors text-sm"
-                  >
-                    Ask our AI Assistant
-                  </button>
+                  <h4 className="font-poppins font-semibold text-brand-brown text-xl mb-1">Phone</h4>
+                  <p className="font-inter text-brand-brown/70">+233 55 636 7951</p>
+                  <p className="font-inter text-brand-brown/70 mb-2">+1 225 397 4757</p>
                 </div>
               </div>
 

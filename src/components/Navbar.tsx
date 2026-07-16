@@ -41,10 +41,11 @@ export default function Navbar() {
       }`}
     >
       <div className="container mx-auto px-6">
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between relative">
           {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
-          <a href="/" className="flex items-center">
-            <Image 
+          <div className="flex items-center">
+            <a href="/" className="flex items-center mr-8">
+              <Image 
               src="/logo_transparent.png" 
               alt="Streams Export GH Logo" 
               width={160} 
@@ -52,9 +53,10 @@ export default function Navbar() {
               className={`object-contain h-16 w-auto md:h-20 ${shouldShimmer ? 'animate-glisten' : ''}`}
               priority
             />
-          </a>
+            </a>
+          </div>
 
-          <nav className="hidden md:flex items-center space-x-8">
+          <nav className="hidden md:flex items-center space-x-8 absolute left-1/2 transform -translate-x-1/2">
             {navLinks.map((link) => {
               const isHomeLink = link.href === "/";
               const textColor = isWhiteNavbar ? 'text-brand-brown' : 'text-white';
@@ -81,13 +83,16 @@ export default function Navbar() {
                 </Link>
               );
             })}
+          </nav>
+
+          <div className="hidden md:flex flex-1 justify-end">
             <Link
               href="/quote"
               className="btn-shimmer bg-brand-gold text-white font-semibold px-6 py-2 rounded-full hover:bg-brand-orange transition-colors"
             >
               Get a Quote
             </Link>
-          </nav>
+          </div>
 
           <button
             className={`md:hidden ${isWhiteNavbar ? 'text-brand-brown' : 'text-white'}`}

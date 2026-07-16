@@ -89,34 +89,24 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Business / Products */}
+          {/* Services */}
           <div>
-            <h4 className="text-white font-poppins font-semibold text-lg mb-6">Business</h4>
+            <h4 className="text-white font-poppins font-semibold text-lg mb-6">Our Services</h4>
             <ul className="space-y-4 font-inter">
               <li>
-                <Link href="/products#gari" className="hover:text-brand-gold transition-colors">
-                  Premium Gari
-                </Link>
+                <span className="text-white/80">Product Sourcing</span>
               </li>
               <li>
-                <Link href="/products#shea-butter" className="hover:text-brand-gold transition-colors">
-                  Raw Shea Butter
-                </Link>
+                <span className="text-white/80">Quality Control</span>
               </li>
               <li>
-                <Link href="/products#black-soap" className="hover:text-brand-gold transition-colors">
-                  Authentic Black Soap
-                </Link>
+                <span className="text-white/80">Export Logistics</span>
               </li>
               <li>
-                <Link href="/products#kokonte" className="hover:text-brand-gold transition-colors">
-                  Dried Fish (Kokonte)
-                </Link>
+                <span className="text-white/80">Safe Delivery</span>
               </li>
               <li>
-                <Link href="/products#kente" className="hover:text-brand-gold transition-colors">
-                  Kente Textiles
-                </Link>
+                <span className="text-white/80">Customer Support</span>
               </li>
             </ul>
           </div>
@@ -125,17 +115,16 @@ export default function Footer() {
           <div>
             <h4 className="text-white font-poppins font-semibold text-lg mb-6">Contact Us</h4>
             <ul className="space-y-4 font-inter">
-              <li className="flex items-start space-x-3">
-                <MapPin className="w-5 h-5 text-brand-gold shrink-0 mt-0.5" />
-                <span>
-                  123 Export Avenue,<br />
-                  Accra, Ghana
-                </span>
+              <li className="flex items-center space-x-3">
+                <Phone className="w-5 h-5 text-brand-gold shrink-0" />
+                <a href="tel:+233556367951" className="hover:text-white transition-colors">
+                  +233 55 636 7951
+                </a>
               </li>
               <li className="flex items-center space-x-3">
                 <Phone className="w-5 h-5 text-brand-gold shrink-0" />
-                <a href="tel:+233000000000" className="hover:text-white transition-colors">
-                  +233 (0) 00 000 0000
+                <a href="tel:+12253974757" className="hover:text-white transition-colors">
+                  +1 225 397 4757
                 </a>
               </li>
               <li className="flex items-center space-x-3">
@@ -162,8 +151,8 @@ export default function Footer() {
         <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center text-sm font-inter text-white/50">
           <p>© {currentYear} Streams Export GH. All rights reserved.</p>
           <div className="flex space-x-6 mt-4 md:mt-0">
-            <Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
-            <Link href="/terms" className="hover:text-white transition-colors">Terms of Service</Link>
+            <Link href="/privacy" className="hover:text-white transition-colors cursor-pointer">Privacy Policy</Link>
+            <Link href="/terms" className="hover:text-white transition-colors cursor-pointer">Terms of Service</Link>
           </div>
         </div>
       </div>

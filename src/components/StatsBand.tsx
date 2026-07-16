@@ -1,12 +1,35 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, animate, useInView } from "framer-motion";
+import { useEffect, useRef } from "react";
+
+function Counter({ from, to, suffix, duration = 2 }: { from: number; to: number; suffix: string, duration?: number }) {
+  const nodeRef = useRef<HTMLDivElement>(null);
+  const isInView = useInView(nodeRef, { once: true, margin: "-50px" });
+  
+  useEffect(() => {
+    if (isInView && nodeRef.current) {
+      const controls = animate(from, to, {
+        duration,
+        ease: "easeOut",
+        onUpdate(value) {
+          if (nodeRef.current) {
+            nodeRef.current.textContent = Math.round(value) + suffix;
+          }
+        },
+      });
+      return () => controls.stop();
+    }
+  }, [isInView, from, to, suffix, duration]);
+
+  return <span ref={nodeRef}>{from}{suffix}</span>;
+}
 
 const stats = [
-  { value: "50+", label: "Products Sourced" },
-  { value: "120+", label: "Trusted Suppliers" },
-  { value: "15+", label: "Countries Served" },
-  { value: "10+", label: "Years Experience" },
+  { value: 100, suffix: "%", label: "Quality Guarantee" },
+  { value: 24, suffix: "/7", label: "Dedicated Support" },
+  { value: 48, suffix: "h", label: "Global Logistics" },
+  { value: 1, suffix: "st", label: "Class Service" },
 ];
 
 export default function StatsBand() {
@@ -24,7 +47,7 @@ export default function StatsBand() {
               className="flex flex-col items-center justify-center text-center px-4"
             >
               <div className="text-4xl md:text-5xl font-poppins font-bold text-brand-gold mb-2">
-                {stat.value}
+                <Counter from={0} to={stat.value} suffix={stat.suffix} />
               </div>
               <div className="text-sm md:text-base font-inter font-medium text-white/90 uppercase tracking-wider">
                 {stat.label}

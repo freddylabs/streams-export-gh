@@ -4,6 +4,7 @@ import WhyChooseUs from "@/components/WhyChooseUs";
 import ProductGrid from "@/components/ProductGrid";
 import StatsBand from "@/components/StatsBand";
 import TrustedByBanner from "@/components/TrustedByBanner";
+import PartnersBand from "@/components/PartnersBand";
 import CTABand from "@/components/CTABand";
 import Footer from "@/components/Footer";
 
@@ -16,6 +17,7 @@ export default function Home() {
       <ProductGrid />
       <StatsBand />
       <TrustedByBanner />
+      <PartnersBand />
       <CTABand />
       <Footer />
     </main>
