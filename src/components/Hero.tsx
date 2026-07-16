@@ -12,7 +12,7 @@ export default function Hero() {
   ];
 
   return (
-    <section className="relative min-h-[100svh] flex items-center justify-center overflow-hidden pt-32 pb-16">
+    <section className="relative h-[100svh] flex items-center justify-center overflow-hidden pt-20 pb-4">
       {/* Background Image with Overlay */}
       <div 
         className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
@@ -23,23 +23,23 @@ export default function Hero() {
         <div className="absolute inset-0 bg-gradient-to-r from-brand-brown/95 via-brand-brown/80 to-brand-brown/50" />
       </div>
 
-      <div className="container relative z-10 mx-auto px-4 py-8">
+      <div className="container relative z-10 mx-auto px-4">
         <div className="max-w-5xl mx-auto flex flex-col items-center text-center">
           
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="flex flex-col items-center justify-center space-y-4 md:space-y-6 mb-6 md:mb-8"
+            className="flex flex-col items-center justify-center space-y-4 mb-4 md:mb-6"
           >
             {/* Added Logo specifically requested by user */}
             <img 
               src="/logo_transparent.png" 
               alt="Streams Export GH Logo" 
-              className="h-20 md:h-28 lg:h-32 w-auto object-contain drop-shadow-xl animate-glisten"
+              className="h-28 md:h-36 lg:h-44 w-auto object-contain drop-shadow-xl animate-glisten"
             />
 
-            <div className="flex items-center bg-white/10 backdrop-blur-sm border border-brand-gold/30 rounded-full px-4 md:px-5 py-1.5 md:py-2 w-fit shadow-lg">
+            <div className="flex items-center bg-white/10 backdrop-blur-sm border border-brand-gold/30 rounded-full px-4 md:px-5 py-1 md:py-1.5 w-fit shadow-lg">
               <Globe className="w-4 md:w-5 h-4 md:h-5 text-brand-gold mr-2 md:mr-3" />
               <span className="text-white text-xs md:text-sm font-inter font-semibold tracking-wide uppercase">
                 Direct from Ghana

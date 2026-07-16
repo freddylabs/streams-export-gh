@@ -9,9 +9,9 @@ export default function ProductGrid() {
     <section className="py-24 bg-white text-brand-brown overflow-hidden">
       <div className="container mx-auto px-6 text-center">
         <motion.div
-          initial={{ opacity: 0, y: 80, scale: 0.9 }}
+          initial={{ opacity: 0, y: 40, scale: 0.95 }}
           whileInView={{ opacity: 1, y: 0, scale: 1 }}
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={{ once: true }}
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="max-w-2xl mx-auto mb-12"
         >

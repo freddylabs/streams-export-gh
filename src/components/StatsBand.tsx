@@ -17,6 +17,11 @@ function Counter({ from, to, suffix, duration = 2 }: { from: number; to: number;
             nodeRef.current.textContent = Math.round(value) + suffix;
           }
         },
+        onComplete() {
+          if (nodeRef.current) {
+            nodeRef.current.textContent = to + suffix;
+          }
+        }
       });
       return () => controls.stop();
     }
