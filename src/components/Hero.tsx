@@ -30,14 +30,14 @@ export default function Hero() {
             initial={{ opacity: 0, scale: 0.8, filter: "blur(10px)" }}
             animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="flex flex-col items-center justify-center space-y-1.5 md:space-y-2 mb-2 md:mb-3 mt-auto"
+            className="flex flex-col items-center justify-center space-y-1.5 md:space-y-2 mb-1 md:mb-3 mt-auto"
           >
             {/* Added Logo specifically requested by user */}
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img 
               src="/logo_transparent.png" 
               alt="Streams Export GH Logo" 
-              className="h-20 sm:h-24 md:h-24 lg:h-28 w-auto object-contain drop-shadow-xl animate-glisten"
+              className="h-32 sm:h-40 md:h-24 lg:h-28 w-auto object-contain drop-shadow-xl animate-glisten"
             />
 
             <div className="flex items-center bg-white/10 backdrop-blur-sm border border-brand-gold/30 rounded-full px-3 py-1 w-fit shadow-lg">
@@ -57,9 +57,9 @@ export default function Hero() {
             initial={{ opacity: 0, scale: 0.9, filter: "blur(10px)" }}
             animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-            className="text-[1.75rem] leading-tight sm:text-4xl md:text-5xl lg:text-5xl font-poppins font-bold text-white mb-2 md:mb-3 drop-shadow-2xl"
+            className="text-4xl leading-tight sm:text-5xl md:text-5xl lg:text-6xl font-poppins font-bold text-white mb-1 md:mb-3 drop-shadow-2xl"
           >
-            IMPORT THE <br className="hidden md:block" />
+            IMPORT THE <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-gold to-brand-flagGold">
               BEST OF GHANA
             </span>
@@ -69,7 +69,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="text-xs sm:text-sm md:text-base text-gray-200 font-inter max-w-[90%] md:max-w-2xl mb-3 md:mb-4 leading-relaxed drop-shadow-md mx-auto"
+            className="text-sm sm:text-base md:text-lg text-gray-200 font-inter max-w-[90%] md:max-w-2xl mb-2 md:mb-5 leading-relaxed drop-shadow-md mx-auto"
           >
             Partner with us to source premium Ghanaian goods for your international market and everyday living.
           </motion.p>
@@ -78,18 +78,18 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.6 }}
-            className="flex flex-row space-x-2 sm:space-x-4 mb-3 md:mb-4 w-full justify-center px-2"
+            className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-4 mb-2 md:mb-6 w-full max-w-[85%] sm:max-w-none mx-auto justify-center px-2"
           >
             <Link
               href="/quote"
-              className="btn-shimmer flex-1 sm:flex-none flex items-center justify-center bg-brand-gold text-brand-brown font-bold text-[10px] sm:text-sm md:text-base px-2 sm:px-6 py-2 md:px-8 md:py-3 rounded-full hover:bg-brand-orange hover:text-white transition-all transform hover:scale-105 shadow-xl"
+              className="btn-shimmer w-full sm:w-auto flex items-center justify-center bg-brand-gold text-brand-brown font-bold text-sm md:text-base px-6 py-2 sm:py-3 md:px-8 md:py-3 rounded-full hover:bg-brand-orange hover:text-white transition-all transform hover:scale-105 shadow-xl"
             >
               Get a Quote
-              <ArrowRight className="ml-1 md:ml-2 w-3 h-3 md:w-5 md:h-5" />
+              <ArrowRight className="ml-2 w-4 h-4 md:w-5 md:h-5" />
             </Link>
             <Link
               href="/products"
-              className="flex-1 sm:flex-none flex items-center justify-center bg-black/20 backdrop-blur-sm border border-brand-gold/50 text-white font-bold text-[10px] sm:text-sm md:text-base px-2 sm:px-6 py-2 md:px-8 md:py-3 rounded-full hover:bg-white/10 hover:border-brand-gold transition-all shadow-xl"
+              className="w-full sm:w-auto flex items-center justify-center bg-black/20 backdrop-blur-sm border border-brand-gold/50 text-white font-bold text-sm md:text-base px-6 py-2 sm:py-3 md:px-8 md:py-3 rounded-full hover:bg-white/10 hover:border-brand-gold transition-all shadow-xl"
             >
               Explore Products
             </Link>
