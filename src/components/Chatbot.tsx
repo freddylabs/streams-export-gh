@@ -48,21 +48,49 @@ export default function Chatbot() {
 
     // Simulate smart AI response
     setTimeout(() => {
-      let aiResponseText = "Thanks for reaching out! Please leave your contact details or email us at info@streamsexportgh.com, and our team will get back to you shortly.";
-      
+      let aiResponseText = "Thanks for reaching out! Could you please clarify your request, or leave your contact details so our team can assist you better?";
       const lowerInput = userMessage.text.toLowerCase();
-      if (lowerInput.includes("product") || lowerInput.includes("catalog")) {
+
+      // Navigation & Core Pages
+      if (lowerInput.match(/\b(product|products|catalog|buy|items)\b/)) {
         aiResponseText = "Taking you to our products page! We export a variety of premium Ghanaian goods including Premium Gari, Shea Butter, Black Soap, Kente Textiles, Cocoa Beans, and Dried Fish.";
         router.push("/products");
-      } else if (lowerInput.includes("shipping") || lowerInput.includes("delivery")) {
-        aiResponseText = "We handle end-to-end logistics and guarantee safe, timely delivery worldwide. Shipping timelines depend on your location and order volume.";
-      } else if (lowerInput.includes("price") || lowerInput.includes("cost") || lowerInput.includes("quote") || lowerInput.includes("order")) {
-        aiResponseText = "Let me take you to our Quote Calculator where you can get an instant estimate and place an order!";
+      } else if (lowerInput.match(/\b(quote|price|cost|estimate|order)\b/)) {
+        aiResponseText = "Let me take you to our Quote Calculator where you can get an instant estimate for your bulk orders!";
         router.push("/quote");
-      } else if (lowerInput.includes("gari")) {
+      } else if (lowerInput.match(/\b(contact|support|email|phone|reach)\b/)) {
+        aiResponseText = "I'll take you to our contact page where you can find our email, phone number, and support form.";
+        router.push("/contact");
+      } else if (lowerInput.match(/\b(about|who are you|company)\b/)) {
+        aiResponseText = "We are Streams Export GH, dedicated to bringing the best of Ghana to the world. Let me take you to our About page to learn more!";
+        router.push("/about");
+      } else if (lowerInput.match(/\b(register|sign up|signup|account)\b/)) {
+        aiResponseText = "Let me take you to the registration page so you can create an account and start ordering.";
+        router.push("/register");
+      } else if (lowerInput.match(/\b(dashboard|profile)\b/)) {
+        aiResponseText = "Navigating to your dashboard.";
+        router.push("/dashboard");
+      } else if (lowerInput.match(/\b(payment|pay)\b/)) {
+        aiResponseText = "Taking you to the payment portal.";
+        router.push("/payment");
+      } else if (lowerInput.match(/\b(privacy)\b/)) {
+        aiResponseText = "Here is our privacy policy.";
+        router.push("/privacy");
+      } else if (lowerInput.match(/\b(terms|conditions)\b/)) {
+        aiResponseText = "Here are our terms and conditions.";
+        router.push("/terms");
+      } 
+      // Services & Specific Information
+      else if (lowerInput.match(/\b(service|services|what do you do)\b/)) {
+        aiResponseText = "We provide premium sourcing and export services from Ghana. We handle product procurement, quality assurance, packaging, and end-to-end logistics to ensure safe delivery to your international destination.";
+      } else if (lowerInput.match(/\b(shipping|delivery|logistics)\b/)) {
+        aiResponseText = "We handle end-to-end logistics and guarantee safe, timely delivery worldwide. Shipping timelines depend on your location and order volume.";
+      } else if (lowerInput.match(/\b(gari)\b/)) {
         aiResponseText = "Our Premium Gari is 100% natural, crisp, and finely roasted. We can supply in bulk quantities for retail or wholesale.";
-      } else if (lowerInput.includes("shea butter")) {
+      } else if (lowerInput.match(/\b(shea butter)\b/)) {
         aiResponseText = "We supply unrefined, Grade-A Shea Butter sourced directly from Northern Ghana, perfect for cosmetics and skin care.";
+      } else if (lowerInput.match(/\b(hi|hello|hey|greetings)\b/)) {
+        aiResponseText = "Hello! I'm here to help you navigate our site, learn about our export services, or find specific Ghanaian products. How can I assist you today?";
       }
 
       const aiMessage: Message = {
@@ -73,7 +101,7 @@ export default function Chatbot() {
 
       setMessages((prev) => [...prev, aiMessage]);
       setIsTyping(false);
-    }, 1500);
+    }, 1200);
   };
 
   return (
